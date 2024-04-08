@@ -1,0 +1,40 @@
+//******************************************************************************
+// File name:	 PassengerVehicle.cpp
+// Author:		 Computer Science, Pacific University
+// Date:		   
+// Class:		   CS 250
+// Assignment: Inheritance
+// Purpose:		 Demonstrate Inheritance
+//******************************************************************************
+#include "PassengerVehicle.h"
+#include <iostream>
+
+PassengerVehicle::PassengerVehicle (const std::string &rcMake, int modelYear,
+															double mileage, double price,
+															double weight,
+														  double towingCapacity) :
+															Vehicle (rcMake, modelYear, mileage, price),
+															mWeight(weight), 
+															mTowingCapacity(towingCapacity){
+}
+
+double PassengerVehicle::getWeight () const {
+	return mWeight;
+}
+
+double PassengerVehicle::getTowingCapacity () const {
+	return mTowingCapacity; 
+}
+
+std::ostream &PassengerVehicle::print (std::ostream &rcOut) const {
+	Vehicle::print (rcOut);
+	rcOut << ", Weight: " << mWeight << ", Towing Capacity : "
+		<< mTowingCapacity;
+  return rcOut;
+}
+
+std::ostream &operator<< (std::ostream &rcOut,
+									        const PassengerVehicle& rcPassengerVehicle) {
+	rcPassengerVehicle.print (rcOut);
+	return rcOut;
+}
