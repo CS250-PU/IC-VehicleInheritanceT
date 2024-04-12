@@ -6,8 +6,9 @@
 // Assignment: Inheritance
 // Purpose:		 Demonstrate Inheritance
 //******************************************************************************
-#include "PassengerVehicle.h"
+
 #include <iostream>
+#include "../include/PassengerVehicle.h"
 
 PassengerVehicle::PassengerVehicle (const std::string &rcMake, int modelYear,
 															double mileage, double price,
@@ -26,11 +27,10 @@ double PassengerVehicle::getTowingCapacity () const {
 	return mTowingCapacity; 
 }
 
-std::ostream &PassengerVehicle::print (std::ostream &rcOut) const {
+void PassengerVehicle::print (std::ostream &rcOut) const {
 	Vehicle::print (rcOut);
 	rcOut << ", Weight: " << mWeight << ", Towing Capacity : "
-		<< mTowingCapacity;
-  return rcOut;
+		<< mTowingCapacity;;
 }
 
 std::ostream &operator<< (std::ostream &rcOut,

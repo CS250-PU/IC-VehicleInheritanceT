@@ -22,7 +22,7 @@ public:
   double getMileage () const;
   double getPrice () const;
 
-  std::ostream &print (std::ostream &rcOutStream) const;
+  void print (std::ostream &rcOutStream) const;
 
 private:
   std::string mcMake;

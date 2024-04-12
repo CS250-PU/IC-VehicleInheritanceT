@@ -6,8 +6,9 @@
 // Assignment: Inheritance
 // Purpose:		 Demonstrate Inheritance
 //******************************************************************************
-#include "../include/Truck.h"
+
 #include <iostream>
+#include "../include/Truck.h"
 
 Truck::Truck (const std::string &rcMake, int modelYear, double mileage, 
               double price, Doors numberOfDoors) : 
@@ -15,10 +16,9 @@ Truck::Truck (const std::string &rcMake, int modelYear, double mileage,
 	mNumberOfDoors = numberOfDoors;
 }
 
-std::ostream & Truck::print (std::ostream& rcOut) const {
+void Truck::print (std::ostream& rcOut) const {
 	Vehicle::print (rcOut);
 	rcOut << ", Number of Doors: " << mNumberOfDoors;
-  return rcOut;
 }
 
 std::ostream &operator<< (std::ostream& rcOut, const Truck &rcTruck) {

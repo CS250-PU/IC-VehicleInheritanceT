@@ -23,7 +23,7 @@ public:
 
   double getTowingCapacity () const; 
 
-  std::ostream & print (std::ostream& rcOut) const;
+  void print (std::ostream& rcOut) const;
 
   friend std::ostream &operator<< (std::ostream &rcOut,
     const PassengerVehicle &rcPassengerVehicle);

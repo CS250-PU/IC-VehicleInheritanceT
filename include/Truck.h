@@ -23,7 +23,7 @@ public:
   friend std::ostream &operator<< (std::ostream &rcOut,
     const Truck& rcTruck);
 
-  std::ostream &print (std::ostream & rcOut) const;
+  void print (std::ostream & rcOut) const;
 
 private:
   Doors mNumberOfDoors;

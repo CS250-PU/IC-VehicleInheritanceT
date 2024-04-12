@@ -7,9 +7,9 @@
 // Purpose:		 Demonstrate Inheritance
 //******************************************************************************
 
-#include "../include/Vehicle.h"
 #include <string>
 #include <iostream>
+#include "../include/Vehicle.h"
 
 Vehicle::Vehicle (const std::string &rcMake, int modelYear, double mileage,
 	double price) {
@@ -35,8 +35,7 @@ double Vehicle::getPrice () const {
 	return mPrice;
 }
 
-std::ostream & Vehicle::print (std::ostream &rcOutStream) const {
+void Vehicle::print (std::ostream &rcOutStream) const {
 	rcOutStream << "Make: " << mcMake << ", Model Year: " << mModelYear
 		<< ", Mileage: " << mMileage << ", Price: " << mPrice;
-  return rcOutStream;
 }
